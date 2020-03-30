@@ -1,7 +1,18 @@
 from django.shortcuts import render
+from rest_framework import viewsets
+from rest_framework import permissions
+from .serializers import ProductsSerializer, CategoriesSerializer
+from .models import Categories, Products
 
-def products(request):
-    return render(request, 'first/products.html', {})
+class CategoriesViewSet(viewsets.ModelViewSet):
+    queryset = Categories.objects.all()
+    serializer_class = CategoriesSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
-def categories(request):
-    return render(request, 'first/categories.html', {})
+class ProductsViewSet(viewsets.ModelViewSet):
+    queryset = Products.objects.all()
+    serializer_class = ProductsSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+
+
