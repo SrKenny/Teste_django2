@@ -20,7 +20,7 @@ class Categories(models.Model):
 
 # Modelo Produto 
 class Products(models.Model):
-    category = models.ForeignKey(Categories, on_delete=models.CASCADE)
+    category = models.ForeignKey(Categories, null=True, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     name = models.CharField(max_length=50)
     description = models.TextField()

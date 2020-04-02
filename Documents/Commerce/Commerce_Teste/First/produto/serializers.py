@@ -3,12 +3,12 @@ from rest_framework import serializers
 from .models import Categories, Products
 
 
-class CategoriesSerializer(serializers.HyperlinkedModelSerializer):
+class CategoriesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Categories
-        fields = ['id', 'label']
+        fields = ['id', 'label', 'image', ]
 
-class ProductsSerializer(serializers.HyperlinkedModelSerializer):
+class ProductsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Products
         fields = ['id', 'category', 'name', 'description', 'image']
