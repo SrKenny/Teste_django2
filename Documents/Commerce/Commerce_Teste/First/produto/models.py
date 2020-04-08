@@ -6,13 +6,15 @@ from django.utils import timezone
 # Modelo Categoria
 
 class Categories(models.Model):
-    label = models.SlugField(max_length=50, unique=True, blank=True, null=True)
+    label = models.CharField(max_length=50, unique=True)
     type = models.CharField(max_length=50)
     rank = models.IntegerField()
     image = models.ImageField()
     timestamp = models.DateTimeField(default=timezone.now)
     date_update = models.DateTimeField(blank=True, null=True)
 
+    class Meta:
+        ordering = ('label',)
     
     #Função para apresentar o nome da categoria
     def __str__(self):
@@ -20,13 +22,16 @@ class Categories(models.Model):
 
 # Modelo Produto 
 class Products(models.Model):
-    category = models.ForeignKey(Categories, null=True, on_delete=models.CASCADE)
+    category = models.ForeignKey(Categories, related_name='categorias', null=True, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, blank=False, default='')
     description = models.TextField()
     image = models.ImageField()
     timestamp = models.DateTimeField(default=timezone.now)
     date_update = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        ordering = ('timestamp',)
      
     # Função para apresentar o produto
     def __str__(self):

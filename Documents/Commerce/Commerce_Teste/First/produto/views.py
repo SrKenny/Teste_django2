@@ -1,28 +1,35 @@
 from django.shortcuts import render
-from rest_framework import viewsets, filters
-from rest_framework import permissions
+from rest_framework import viewsets, filters, generics
+from rest_framework.response import Response
+from rest_framework.reverse import reverse
 from .serializers import ProductsSerializer, CategoriesSerializer
 from .models import Categories, Products
 
 #View da Categoria
 
-class CategoriesViewSet(viewsets.ModelViewSet):
+class CategoriesList(generics.ListCreateAPIView):
     queryset = Categories.objects.all()
     serializer_class = CategoriesSerializer
-    filter_backends = [filters.SearchFilter]
-    search_fields = ['label', 'type']
-    ordering_fields = []
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    name = 'categories-list'
+    #filter_backends = [filters.SearchFilter]
+    #search_fields = ['label', 'type']
+
+class CategoriesDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Categories.objects.all()
+    serializer_class = CategoriesSerializer
+    name = 'categories-detail'
 
 #View do Produto
-
-class ProductsViewSet(viewsets.ModelViewSet):
+class ProductsList(generics.ListCreateAPIView):
     queryset = Products.objects.all()
     serializer_class = ProductsSerializer
-    filter_backends = [filters.SearchFilter]
-    search_fields = ['name', 'title', 'category']
-    ordering_fields = []
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    name = 'products-list'
+    #filter_backends = [filters.SearchFilter]
+    #search_fields = ['name', 'title', 'category']
 
+class ProductsDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Products.objects.all()
+    serializer_class = ProductsSerializer
+    name = 'products-detail'
 
 
