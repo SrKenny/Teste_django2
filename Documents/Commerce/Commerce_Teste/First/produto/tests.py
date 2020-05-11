@@ -18,8 +18,6 @@ class CategoriesTestCase(TestCase):
 
 
 
-
-
 #class ProdutoTestCase(TestCase):
  #   def setUp(self):
   #      Products.objects.create(title='Console', name='Nintendo Switch', description='Video game para a criançada.', image='none')

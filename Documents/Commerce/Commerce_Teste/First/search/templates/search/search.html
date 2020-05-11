@@ -1,0 +1,17 @@
+What you search?
+
+<form method="get">
+
+    <input id="q" name="q" description="q" type="text" placeholder="your search...">
+
+</form>
+
+{% for item in products %}
+    {{item.name}}
+    {{item.price}}
+    {{item.image}}
+    {{item.description}}
+    {{item.timestamp}}
+ <br>
+
+{% endfor %}

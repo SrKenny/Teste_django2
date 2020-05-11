@@ -16,12 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from produto import views
-
+from search import views as search_views
 
 
 urlpatterns = [
         path('', include('produto.urls')),
         path('admin/', admin.site.urls),
+        path('search/', search_views.search),
+
         
        
 ]

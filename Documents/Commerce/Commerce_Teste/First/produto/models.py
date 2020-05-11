@@ -27,11 +27,12 @@ class Products(models.Model):
     name = models.CharField(max_length=50, blank=False, default='')
     description = models.TextField()
     image = models.ImageField()
+    price = models.FloatField(null=True)
     timestamp = models.DateTimeField(default=timezone.now)
     date_update = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        ordering = ('timestamp',)
+        ordering = ('timestamp', 'name', )
      
     # Função para apresentar o produto
     def __str__(self):
