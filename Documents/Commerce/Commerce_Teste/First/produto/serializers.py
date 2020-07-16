@@ -7,7 +7,7 @@ class CategoriesSerializer(serializers.HyperlinkedModelSerializer):
     label = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='categories-detail')
     class Meta:
         model = Categories
-        fields = ('pk', 'label', 'type', 'rank', 'image', 'timestamp')
+        fields = ('label', 'type', 'rank', 'image', 'timestamp')
 
 class ProductsSerializer(serializers.HyperlinkedModelSerializer):
     category = serializers.SlugRelatedField(queryset=Categories.objects.all(), slug_field='label')

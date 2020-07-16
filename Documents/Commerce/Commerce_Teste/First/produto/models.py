@@ -26,7 +26,7 @@ class Products(models.Model):
     title = models.CharField(max_length=100)
     name = models.CharField(max_length=50, blank=False, default='')
     description = models.TextField()
-    image = models.ImageField()
+    image = models.ImageField(upload_to='images/')
     price = models.FloatField(null=True)
     timestamp = models.DateTimeField(default=timezone.now)
     date_update = models.DateTimeField(blank=True, null=True)
