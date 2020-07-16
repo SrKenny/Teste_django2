@@ -1,45 +1,48 @@
 from django.shortcuts import render
 from .documents import ProductsDocument
-from elasticsearch import Elasticsearch, RequestsHttpConnection
-from aws_requests_auth.boto_utils import BotoAWSRequestsAuth
+from elasticsearch import Elasticsearch
+
 
 # Create your views here.
 
 def search(request):
     q = request.GET.get('q')
-    products = ProductsDocument.search()
     if q:
-        products.query("match", name=q)
+        products = ProductsDocument.search().query("match", name=q)
     else:
-        products.sort('id')
+        products = ''
 
     return render(request, 'search/search.html', {'products': products})
 
 
-es = Elasticsearch(
-  host=host, port=port,
-  connection_class=RequestsHttpConnection,
-  http_auth=BotoAWSRequestsAuth(),
-  scheme=scheme
-)
-es.search(
-  index=index, doc_type=doc_type,
-  body={
-    "query": {
-      "bool": {
-        "must": {
-          "term": {"products": "apple"}
+es1 = {
+    "name": "Django Book",
+    "description": "Good Book",
+    "price": "250"
+}
+
+
+def suggestion(request):
+    es = Elasticsearch()
+    es.index(index='products-index', id=4, body=es1)
+    test = es.get(index='products-index', id=1)
+    print(test)
+    es.search(
+        index='products-index',
+        body={
+            "query": {
+                "term": {"title": "fini"}
+            },
+            "aggs": {
+                "recommendations": {
+                    "significant_terms": {
+                        "field": "title",
+                        "exclude": "fini",
+                    }
+                }
+            }
+
         }
-      }
-    },
-    "aggs": {
-      "recommendations": {
-        "significant_terms": {
-          "field": "products",
-          "exclude": "apple",
-          "min_doc_count": 100
-        }
-      }
-    }
-  }
-)
+    )
+
+    return render(request, 'search/suggestion.html', {'suggest': es})

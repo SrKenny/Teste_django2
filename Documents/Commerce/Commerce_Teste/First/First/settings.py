@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
-    'produto',
+    'products',
     'search',
     'rest_framework',
     'django_filters',
@@ -99,7 +99,6 @@ DATABASES = {
 
     }
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 

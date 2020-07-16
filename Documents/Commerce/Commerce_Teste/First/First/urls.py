@@ -18,14 +18,15 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from django.views.generic.base import TemplateView
-from produto import views
+from products import views
 from search import views as search_views
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
-    path('product/', include('produto.urls')),
+    path('product/', include('products.urls')),
     path('admin/', admin.site.urls),
     path('search/', search_views.search),
+    path('suggest/', search_views.suggestion),
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
 

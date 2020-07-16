@@ -3,6 +3,7 @@ from django.db import models
 from django.utils import timezone
 
 
+
 # Modelo Categoria
 
 class Categories(models.Model):
@@ -15,12 +16,13 @@ class Categories(models.Model):
 
     class Meta:
         ordering = ('label',)
-    
-    #Função para apresentar o nome da categoria
-    def __str__(self):
-       return self.label
 
-# Modelo Produto 
+    # Função para apresentar o nome da categoria
+    def __str__(self):
+        return self.label
+
+
+# Modelo Produto
 class Products(models.Model):
     category = models.ForeignKey(Categories, related_name='categorias', null=True, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
@@ -32,12 +34,11 @@ class Products(models.Model):
     date_update = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        ordering = ('timestamp', 'name', )
-     
-    # Função para apresentar o produto
+        ordering = ('timestamp', 'name',)
+
+    # Função para apresentar o products
     def __str__(self):
-       return self.name 
+        return self.name
 
 
 
- 

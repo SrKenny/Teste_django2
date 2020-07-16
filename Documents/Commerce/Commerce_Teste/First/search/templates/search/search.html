@@ -7,11 +7,10 @@ What you search?
 </form>
 
 {% for item in products %}
-    {{item.name}}
-    {{item.price}}
-    {{item.image}}
-    {{item.description}}
-    {{item.timestamp}}
- <br>
+<p>{{item.name}}</p>
+<img src="{{item.image.url}}" alt="{{item.title}}">
+<p>{{item.price}}</p>
+<p>{{item.description}}</p>
+<br>
 
 {% endfor %}
