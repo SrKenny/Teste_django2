@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7722e51-0a4c-4699-a934-c27430e53a4c" name="Default Changelist" comment="" />
+    <list default="true" id="d8ce8fc4-e81f-4a38-9d88-3ab74be890ea" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,76 +11,52 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectId" id="1ejZ1MdVnDUJQGP6VwesIE3Bbax" />
+  <component name="ProjectId" id="1a2OHyzvW1rGY4SjBbsXEL9cTOE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/crash-course-CRM-Part-22-S3-File-storage" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\kenny\Documents\GitHub\Teste_django2\Documents\Commerce\Commerce_Teste\First\produto" />
-      <recent name="C:\Users\kenny\Documents\GitHub\Teste_django2\Documents\Commerce\Commerce_Teste\First\images" />
-      <recent name="C:\Users\kenny\Documents\GitHub\Teste_django2\Documents\Commerce\Commerce_Teste\First\images\images" />
-      <recent name="C:\Users\kenny\Documents\GitHub\Teste_django2\Documents\Commerce\Commerce_Teste\First\search\templates" />
-      <recent name="C:\Users\kenny\Documents\GitHub\Teste_django2\Documents\Commerce\Commerce_Teste\First\search" />
-    </key>
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Tutoriais/RestFul_Tutorial" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.splitter.proportion" value="0.23649338" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e7722e51-0a4c-4699-a934-c27430e53a4c" name="Default Changelist" comment="" />
-      <created>1594836746704</created>
+      <changelist id="d8ce8fc4-e81f-4a38-9d88-3ab74be890ea" name="Default Changelist" comment="" />
+      <created>1585930139690</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1594836746704</updated>
+      <updated>1585930139690</updated>
     </task>
     <servers />
   </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="94" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594931828913">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1586191820009">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="94" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.984@0.0.1280.984" timestamp="1594931828913" />
-    <state x="420" y="247" key="FileChooserDialogImpl" timestamp="1594846964871">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1586191820009" />
+    <state x="184" y="6" key="SettingsEditor" timestamp="1586276512753">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1594846964871" />
-    <state x="141" y="137" key="SettingsEditor" timestamp="1594839178319">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586276512753" />
+    <state x="359" y="234" key="com.intellij.ide.util.TipDialog" timestamp="1586293128125">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="141" y="137" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1594839178319" />
+    <state x="336" y="316" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" timestamp="1586008381485" />
+    <state x="359" y="234" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586293128125" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1586297644458">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1586297644458" />
   </component>
 </project>
