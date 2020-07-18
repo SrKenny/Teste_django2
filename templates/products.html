@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Products{% endblock %}
 
 {% block content %}
+<div class='row'>
 {% if user.is_authenticated %}
- <ul>
   {% for product in object_list %}
-    <a href=" http://127.0.0.1:8000/product/products/{{ product.id }}"> <h2>{{ product.title }}</h2></a>
-    <img src="{{ product.image }}" alt="{{ product.title }}">
-     <p> Price R$ {{ product.price }}</p>
+      <div class='col my-3'>
+           {% include 'card.html' with instance=product %}
+       </div>
   {% endfor %}
-</ul>
+       </div>
+{% else %}
+          Please login!!
 {% endif %}
 {% endblock %}
+

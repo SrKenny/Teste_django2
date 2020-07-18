@@ -1,16 +1,37 @@
-What you search?
+{% extends 'base.html' %}
 
-<form method="get">
+{% block title %}Search{% endblock %}
 
-    <input id="q" name="q" description="q" type="text" placeholder="your search...">
+{% block content %}
+ <div class='row  mb-3'>
 
-</form>
+      <div class='col-12 col-md-6 mx-auto py-5'>
+               {% include 'search/snippets/search-form.html' %}
 
-{% for item in products %}
-<p>{{item.name}}</p>
-<img src="{{item.image.url}}" alt="{{item.title}}">
-<p>{{item.price}}</p>
-<p>{{item.description}}</p>
-<br>
+            </div>
+            <div class='col-12'>
+                <hr>
+            </div>
+</div>
+     <div class='row'>
+
+{% for product in products %}
+         <div class='col'>
+             {% include 'card.html' with instance=product %}
+         {% if forloop.counter|divisibleby:5 %}
+         </div> </div><div class='row'><div class='col-12'><hr/></div>
+        {% elif forloop.counter|divisibleby:2 %}
+            </div> </div><div class='row'><div class='col-12'><hr/></div>
+        {% else %}
+         </div>
+        {% endif %}
 
 {% endfor %}
+</div>
+<div class='row'>
+    Suggestion for You
+    {{suggest}}
+</div>
+{% endblock %}
+
+

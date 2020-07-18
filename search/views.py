@@ -1,18 +1,23 @@
 from django.shortcuts import render
 from .documents import ProductsDocument
 from elasticsearch import Elasticsearch
+from elasticsearch_dsl import Search, Q
 
 
 # Create your views here.
 
 def search(request):
     q = request.GET.get('q')
+    products = ProductsDocument.search()
     if q:
-        products = ProductsDocument.search().query("multi_match", query=q, fields=['title', 'name'])
+       qs = products.query("multi_match", query=q, fields=['title', 'name'])
+       # suggest = products.aggs.bucket('recommendations', 'terms', field= "related").metric('max_amt', 'max', field='amount')
     else:
-        products = ''
+       qs = ''
 
-    return render(request, 'search/search.html', {'products': products})
+    suggest = suggestion(q)
+
+    return render(request, 'search/search.html', {'products': qs, 'suggest': suggest})
 
 
 es1 = {
@@ -22,12 +27,7 @@ es1 = {
 }
 
 
-def suggestion_view(request):
-    products = ProductsDocument
-    products.search()
-    pass
-
-def suggestion(request):
+def suggestion(q):
     es = Elasticsearch()
     es.index(index='products-index', id=4, body=es1)
     test = es.get(index='products-index', id=4)
@@ -35,7 +35,7 @@ def suggestion(request):
         index='products-index',
         body={
             "query": {
-                "match": {"title": "fini"}
+                "match": {"title": q}
             },
             "aggregations": {
                 "recommendations": {
@@ -48,4 +48,4 @@ def suggestion(request):
 
         }
     )
-    return render(request, 'search/suggestion.html', {'suggest': donut})
+    return donut
