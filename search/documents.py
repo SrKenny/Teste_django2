@@ -2,6 +2,7 @@ from django_elasticsearch_dsl import Document, Text, KeywordField, fields, Date
 from elasticsearch_dsl import InnerDoc, analyzer, tokenizer
 from django_elasticsearch_dsl.registries import registry
 from products.models import Products
+from users.models import CustomUser
 
 html_strip = analyzer(
     'html_strip',

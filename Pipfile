@@ -17,6 +17,7 @@ elasticsearch-dsl = "*"
 django-elasticsearch-dsl = "*"
 django-elasticsearch-dsl-drf = "*"
 django-filter = "*"
+django-seed = "*"
 
 [requires]
 python_version = "3.7"

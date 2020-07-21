@@ -26,6 +26,24 @@ es1 = {
     "price": "250"
 }
 
+# def suggestion(q):
+#     client = Elasticsearch()
+#
+#     s = Search(using=client, index="my-index") \
+#         .filter("term", category="search") \
+#         .query("match", title="python") \
+#
+#     s.aggs.bucket('per_tag', 'terms', field='tags') \
+#         .metric('max_lines', 'max', field='lines')
+#
+#     response = s.execute()
+#
+#     for hit in response:
+#         print(hit.meta.score, hit.title)
+#
+#     for tag in response.aggregations.per_tag.buckets:
+#         print(tag.key, tag.max_lines.value)
+#     pass
 
 def suggestion(q):
     es = Elasticsearch()
